@@ -23,7 +23,7 @@ var (
 )
 
 func init() {
-	flag.IntVar(&pin, "pin", 4, "pin")
+	flag.IntVar(&pin, "pin", 11, "pin")
 	flag.StringVar(&stype, "sensor-type", "dht22", "sensor type (dht22, dht11)")
 	flag.BoolVar(&boostPerfFlag, "boost", false, "boost performance")
 }
