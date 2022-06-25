@@ -46,7 +46,7 @@ func main() {
 	}
 
 	temperature, humidity, retried, err :=
-		dht.ReadDHTxxWithRetry(sensorType, pin, boostPerfFlag, 10)
+		dht.ReadDHTxxWithRetry(dht.DHT22, pin, boostPerfFlag, 10)
 	if err != nil {
 		lg.Fatal(err)
 	}
