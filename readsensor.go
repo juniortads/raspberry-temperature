@@ -23,7 +23,7 @@ var (
 )
 
 func init() {
-	flag.IntVar(&pin, "pin", 17, "pin")
+	flag.IntVar(&pin, "pin", 11, "pin")
 	flag.StringVar(&stype, "sensor-type", "dht22", "sensor type (dht22, dht11)")
 	flag.BoolVar(&boostPerfFlag, "boost", false, "boost performance")
 }
@@ -31,7 +31,7 @@ func init() {
 func main() {
 	defer logger.FinalizeLogger()
 	// Uncomment/comment next line to suppress/increase verbosity of output
-	// logger.ChangePackageLogLevel("dht", logger.InfoLevel)
+	logger.ChangePackageLogLevel("dht", logger.InfoLevel)
 
 	// Calculate VPD (vapor pressure deficit), which defined as Relative humidity,
 	// with output in format of influx protocol.
