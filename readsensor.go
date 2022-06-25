@@ -39,7 +39,7 @@ func main() {
 	flag.Parse()
 	
 	temperature, humidity, retried, err :=
-		dht.ReadDHTxxWithRetry(dht.DHT22, pin, boostPerfFlag, 10)
+		dht.ReadDHTxxWithRetry(dht.DHT22, 4, boostPerfFlag, 10)
 	if err != nil {
 		lg.Fatal(err)
 	}
