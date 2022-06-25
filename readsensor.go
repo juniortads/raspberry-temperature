@@ -25,7 +25,7 @@ var (
 func init() {
 	flag.IntVar(&pin, "pin", 11, "pin")
 	flag.StringVar(&stype, "sensor-type", "dht22", "sensor type (dht22, dht11)")
-	flag.BoolVar(&boostPerfFlag, "boost", false, "boost performance")
+	flag.BoolVar(&boostPerfFlag, "boost", true, "boost performance")
 }
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 	flag.Parse()
 	
 	temperature, humidity, retried, err :=
-		dht.ReadDHTxxWithRetry(dht.DHT22, 4, boostPerfFlag, 10)
+		dht.ReadDHTxxWithRetry(dht.DHT22, 11, boostPerfFlag, 10)
 	if err != nil {
 		lg.Fatal(err)
 	}
