@@ -12,7 +12,7 @@ import (
 )
 
 var lg = logger.NewPackageLogger("main",
-	logger.InfoLevel
+	logger.InfoLevel,
 )
 
 var (
