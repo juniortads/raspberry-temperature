@@ -37,14 +37,7 @@ func main() {
 	// with output in format of influx protocol.
 	// Read for more details: https://physics.stackexchange.com/questions/4343/how-can-i-calculate-vapor-pressure-deficit-from-temperature-and-relative-humidit
 	flag.Parse()
-	var sensorType dht.SensorType
-
-	if stype == "dht22" || stype == "am2302" {
-		sensorType = dht.DHT22
-	} else if stype == "dht11" {
-		sensorType = dht.DHT11
-	}
-
+	
 	temperature, humidity, retried, err :=
 		dht.ReadDHTxxWithRetry(dht.DHT22, pin, boostPerfFlag, 10)
 	if err != nil {
